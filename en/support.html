@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fishing Log · Support</title>
+<style>
+  :root{
+    --primary:#0B7C55;
+    --ink:#1A2420;
+    --ink-2:#5B6B62;
+    --ink-3:#8A988F;
+    --line:#E7EAE6;
+    --sunken:#F6F7F5;
+    --surface:#FFFFFF;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;background:var(--sunken);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:720px;margin:0 auto;padding:48px 20px 80px}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px;margin-bottom:20px}
+  h1{font-size:26px;line-height:1.3;margin:0 0 8px;font-weight:700}
+  h2{font-size:18px;margin:0 0 12px;font-weight:700}
+  p{margin:0 0 12px}
+  .meta{font-size:13px;color:var(--ink-3);margin:0}
+  .lead{font-size:15px;color:var(--ink-2)}
+  .tag{display:inline-block;font-size:12px;color:var(--ink-2);background:#EFF0EF;border-radius:999px;padding:3px 12px;margin-bottom:16px}
+  details{border-top:1px solid var(--line);padding:14px 0}
+  details:first-of-type{border-top:none;padding-top:0}
+  summary{font-weight:700;font-size:15px;cursor:pointer;list-style:none}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"＋";float:right;color:var(--ink-3);font-weight:400}
+  details[open] summary::after{content:"－"}
+  .answer{padding-top:10px;font-size:15px;color:var(--ink-2)}
+  a{color:var(--primary)}
+  .btn{
+    display:inline-block;background:var(--primary);color:#fff;text-decoration:none;
+    font-size:15px;font-weight:600;border-radius:999px;padding:12px 26px;margin-top:4px;
+  }
+  footer{font-size:13px;color:var(--ink-3);text-align:center;margin-top:32px}
+  .langs{display:flex;gap:14px;justify-content:flex-end;font-size:13px;margin:0 0 14px}
+  .langs a{color:var(--ink-3);text-decoration:none}
+  .langs a.on{color:var(--primary);font-weight:600}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="langs">
+    <a href="../zh-Hans/support.html">简体</a>
+    <a href="../zh-Hant/support.html">繁體</a>
+    <a class="on" href="support.html">English</a>
+    <a href="../ja/support.html">日本語</a>
+  </nav>
+
+  <div class="card">
+    <span class="tag">Fishing Log · Support</span>
+    <h1>How to use Fishing Log</h1>
+    <p class="meta">Current version 2.0</p>
+    <p class="lead">Fishing Log answers one question: is today worth going out? Open it and you get today's suitability index, with the math written underneath.</p>
+    <a class="btn" href="mailto:support@nicebooo.cn">Email us</a>
+  </div>
+
+  <div class="card">
+    <h2>Frequently asked</h2>
+
+    <details open>
+      <summary>Where does the score come from?</summary>
+      <div class="answer">Six factors add up: the 24-hour pressure trend, absolute pressure, wind, rain, temperature swing, and whether you are fishing in the dawn or dusk window. Tap "View factor breakdown" on the home screen to see how many points each one added or removed. The rule parameters are delivered by the server, so retuning weights does not wait for an app update.</div>
+    </details>
+
+    <details>
+      <summary>Why does the home screen say "Offline fallback"?</summary>
+      <div class="answer">It means no fresh weather was fetched this time and the app is showing its local cache or built-in data. The screen states the source and the cache time. Pull to refresh once you are back online.</div>
+    </details>
+
+    <details>
+      <summary>Can I use it without location?</summary>
+      <div class="answer">Yes. Location is requested once, only when you tap "Use Current Location", at city-level accuracy, and is used only to query weather. You can pick a city by hand instead; every feature works the same.</div>
+    </details>
+
+    <details>
+      <summary>Are my records uploaded?</summary>
+      <div class="answer">No. Spots, sessions, catches, notes and photos live only on your phone, and the app needs no account. Uninstalling the app removes that data with it.</div>
+    </details>
+
+    <details>
+      <summary>Can I log a session with zero fish?</summary>
+      <div class="answer">Yes, and you should. A blank is data too: sessions and blank rate are counted from the trips you actually made, so logging only the good days distorts the statistics.</div>
+    </details>
+
+    <details>
+      <summary>Is the closed-season information reliable?</summary>
+      <div class="answer">The closed-season data covers the major river basins in mainland China and comes from official notices published by fishery authorities; the interface shows the notice number and the waters it applies to, and reminds you that the local announcement prevails. Regions we could not verify are labelled "Not covered" rather than implying there is no restriction. Outside mainland China the app shows a general reminder to follow local rules instead.</div>
+    </details>
+
+    <details>
+      <summary>Where does the weather come from?</summary>
+      <div class="answer">Apple WeatherKit, Apple's system weather service; the app hands it coordinates only. If WeatherKit is unavailable the app switches to our own server (QWeather data) and marks the screen "Backup source". Weather is a forecast and carries uncertainty; the index is a guide based on meteorological conditions, not a prediction of whether fish will bite.</div>
+    </details>
+
+    <details>
+      <summary>Can I change the app icon?</summary>
+      <div class="answer">Yes. "Me → Appearance → App icon" offers four palettes: morning, moonlit night, dusk and rain.</div>
+    </details>
+  </div>
+
+  <div class="card">
+    <h2>Anything else</h2>
+    <p>Email <a href="mailto:support@nicebooo.cn">support@nicebooo.cn</a> with your iOS version and the app version. Clear reproduction steps get you a faster answer.</p>
+    <p class="meta">Privacy details are in the <a href="privacy-policy.html">Privacy Policy</a>.</p>
+  </div>
+
+  <footer>Fishing Log · Check the weather, decide whether to fish</footer>
+</div>
+</body>
+</html>

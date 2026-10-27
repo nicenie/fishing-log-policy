@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>釣りログ · サポート</title>
+<style>
+  :root{
+    --primary:#0B7C55;
+    --ink:#1A2420;
+    --ink-2:#5B6B62;
+    --ink-3:#8A988F;
+    --line:#E7EAE6;
+    --sunken:#F6F7F5;
+    --surface:#FFFFFF;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;background:var(--sunken);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",Meiryo,sans-serif;
+    font-size:16px;line-height:1.8;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:720px;margin:0 auto;padding:48px 20px 80px}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px;margin-bottom:20px}
+  h1{font-size:26px;line-height:1.35;margin:0 0 8px;font-weight:700}
+  h2{font-size:18px;margin:0 0 12px;font-weight:700}
+  p{margin:0 0 12px}
+  .meta{font-size:13px;color:var(--ink-3);margin:0}
+  .lead{font-size:15px;color:var(--ink-2)}
+  .tag{display:inline-block;font-size:12px;color:var(--ink-2);background:#EFF0EF;border-radius:999px;padding:3px 12px;margin-bottom:16px}
+  details{border-top:1px solid var(--line);padding:14px 0}
+  details:first-of-type{border-top:none;padding-top:0}
+  summary{font-weight:700;font-size:15px;cursor:pointer;list-style:none}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"＋";float:right;color:var(--ink-3);font-weight:400}
+  details[open] summary::after{content:"－"}
+  .answer{padding-top:10px;font-size:15px;color:var(--ink-2)}
+  a{color:var(--primary)}
+  .btn{
+    display:inline-block;background:var(--primary);color:#fff;text-decoration:none;
+    font-size:15px;font-weight:600;border-radius:999px;padding:12px 26px;margin-top:4px;
+  }
+  footer{font-size:13px;color:var(--ink-3);text-align:center;margin-top:32px}
+  .langs{display:flex;gap:14px;justify-content:flex-end;font-size:13px;margin:0 0 14px}
+  .langs a{color:var(--ink-3);text-decoration:none}
+  .langs a.on{color:var(--primary);font-weight:600}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="langs">
+    <a href="../zh-Hans/support.html">简体</a>
+    <a href="../zh-Hant/support.html">繁體</a>
+    <a href="../en/support.html">English</a>
+    <a class="on" href="support.html">日本語</a>
+  </nav>
+
+  <div class="card">
+    <span class="tag">釣りログ · サポート</span>
+    <h1>釣りログの使い方</h1>
+    <p class="meta">現在のバージョン 2.0</p>
+    <p class="lead">釣りログが答えるのはひとつだけ。今日、行く価値はあるか。開けば今日の釣り指数と、その点数がどう出たかが並びます。</p>
+    <a class="btn" href="mailto:support@nicebooo.cn">メールで問い合わせる</a>
+  </div>
+
+  <div class="card">
+    <h2>よくある質問</h2>
+
+    <details open>
+      <summary>指数の点数はどう決まりますか？</summary>
+      <div class="answer">6つの要素の加点・減点で決まります。24 時間の気圧変化、絶対気圧、風、降水、気温の変化、朝夕の時間帯かどうか。ホームの「指数の内訳を見る」を開くと、各項目が何点加減したかが分かります。ルールのパラメータはサーバー配信なので、重みの調整にアプリ更新は要りません。</div>
+    </details>
+
+    <details>
+      <summary>ホームに「オフライン代替」と出るのはなぜ？</summary>
+      <div class="answer">今回新しい天気を取得できず、本機のキャッシュか内蔵データを表示している状態です。画面には出所とキャッシュ時刻が表示されます。通信が戻ったら下に引っ張って更新してください。</div>
+    </details>
+
+    <details>
+      <summary>位置情報なしでも使えますか？</summary>
+      <div class="answer">使えます。位置情報は「現在地を使う」を押したときだけ、市区町村レベルの精度で 1 回だけ要求し、天気の取得にのみ使います。許可しなくても都市を手動で選べ、機能は同じです。</div>
+    </details>
+
+    <details>
+      <summary>記録はアップロードされますか？</summary>
+      <div class="answer">されません。釣り場・釣行・釣果・メモ・写真はお使いの iPhone の中だけに保存され、アカウントも不要です。アプリを削除するとこれらのデータも一緒に削除されます。</div>
+    </details>
+
+    <details>
+      <summary>釣果ゼロでも記録できますか？</summary>
+      <div class="answer">できますし、記録すべきです。「ボウズもデータ」——釣行回数とボウズ率は実際に出かけた回数から計算されるので、釣れた日だけ記録すると統計がゆがみます。</div>
+    </details>
+
+    <details>
+      <summary>禁漁期の情報は信頼できますか？</summary>
+      <div class="answer">禁漁期のデータは中国本土の主要流域を対象に、各流域の漁業主管部門が公開した通告に基づいています。画面には通告番号と対象水域を表示し、「現地の公告が優先」と明記しています。通告を確認できていない地域は「未収録」と明示し、規制がないかのように見せません。中国本土以外では、地域のルールに従うよう促す一般的な案内を表示します。</div>
+    </details>
+
+    <details>
+      <summary>天気データはどこから来ますか？</summary>
+      <div class="answer">Apple の天気サービス WeatherKit です。アプリは緯度経度だけを渡します。WeatherKit が使えないときは自前のサーバー（和風天気 QWeather のデータ）に切り替わり、画面に「予備ソース」と表示します。天気は予報であり不確実性があります。指数は気象条件に基づく目安で、実際に釣れるかどうかを保証するものではありません。</div>
+    </details>
+
+    <details>
+      <summary>アプリのアイコンは変えられますか？</summary>
+      <div class="answer">変えられます。「マイ → 外観 → アプリアイコン」に朝景・月夜・夕景・雨の 4 種類があります。</div>
+    </details>
+  </div>
+
+  <div class="card">
+    <h2>その他のお問い合わせ</h2>
+    <p><a href="mailto:support@nicebooo.cn">support@nicebooo.cn</a> まで、iOS のバージョンとアプリのバージョンを添えてご連絡ください。再現手順が具体的だと解決が早くなります。</p>
+    <p class="meta">プライバシーについては<a href="privacy-policy.html">プライバシーポリシー</a>をご覧ください。</p>
+  </div>
+
+  <footer>釣りログ · 天気を見て、今日行くか決める</footer>
+</div>
+</body>
+</html>

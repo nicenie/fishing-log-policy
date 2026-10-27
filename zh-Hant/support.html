@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>釣魚紀錄 · 支援</title>
+<style>
+  :root{
+    --primary:#0B7C55;
+    --ink:#1A2420;
+    --ink-2:#5B6B62;
+    --ink-3:#8A988F;
+    --line:#E7EAE6;
+    --sunken:#F6F7F5;
+    --surface:#FFFFFF;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;background:var(--sunken);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang TC","Hiragino Sans CNS","Microsoft JhengHei","Noto Sans TC",sans-serif;
+    font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:720px;margin:0 auto;padding:48px 20px 80px}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px;margin-bottom:20px}
+  h1{font-size:26px;line-height:1.3;margin:0 0 8px;font-weight:700}
+  h2{font-size:18px;margin:0 0 12px;font-weight:700}
+  p{margin:0 0 12px}
+  .meta{font-size:13px;color:var(--ink-3);margin:0}
+  .lead{font-size:15px;color:var(--ink-2)}
+  .tag{display:inline-block;font-size:12px;color:var(--ink-2);background:#EFF0EF;border-radius:999px;padding:3px 12px;margin-bottom:16px}
+  details{border-top:1px solid var(--line);padding:14px 0}
+  details:first-of-type{border-top:none;padding-top:0}
+  summary{font-weight:700;font-size:15px;cursor:pointer;list-style:none}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"＋";float:right;color:var(--ink-3);font-weight:400}
+  details[open] summary::after{content:"－"}
+  .answer{padding-top:10px;font-size:15px;color:var(--ink-2)}
+  a{color:var(--primary)}
+  .btn{
+    display:inline-block;background:var(--primary);color:#fff;text-decoration:none;
+    font-size:15px;font-weight:600;border-radius:999px;padding:12px 26px;margin-top:4px;
+  }
+  footer{font-size:13px;color:var(--ink-3);text-align:center;margin-top:32px}
+  .langs{display:flex;gap:14px;justify-content:flex-end;font-size:13px;margin:0 0 14px}
+  .langs a{color:var(--ink-3);text-decoration:none}
+  .langs a.on{color:var(--primary);font-weight:600}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="langs">
+    <a href="../zh-Hans/support.html">简体</a>
+    <a class="on" href="support.html">繁體</a>
+    <a href="../en/support.html">English</a>
+    <a href="../ja/support.html">日本語</a>
+  </nav>
+
+  <div class="card">
+    <span class="tag">釣魚紀錄 · 支援</span>
+    <h1>釣魚紀錄怎麼用</h1>
+    <p class="meta">目前版本 2.0</p>
+    <p class="lead">釣魚紀錄只回答一個問題：今天值不值得出門釣魚。打開就是今天的適宜指數，下面寫清分數是怎麼算出來的。</p>
+    <a class="btn" href="mailto:support@nicebooo.cn">寄信回報問題</a>
+  </div>
+
+  <div class="card">
+    <h2>常見問題</h2>
+
+    <details open>
+      <summary>指數分數是怎麼來的？</summary>
+      <div class="answer">由六個因子加減得出：氣壓 24 小時趨勢、絕對氣壓、風力、降雨、溫度變化、是否處於晨昏時段。點首頁的「查看因子明細」可以看到每一項加減了多少分。規則參數由伺服器下發，改權重不必等 App 更新。</div>
+    </details>
+
+    <details>
+      <summary>為什麼首頁顯示「離線替代」？</summary>
+      <div class="answer">表示這次沒拉到最新的天氣資料，顯示的是本機暫存或內建資料。介面會標註來源與暫存時間。網路恢復後下拉即可重新整理。</div>
+    </details>
+
+    <details>
+      <summary>不用定位也能用嗎？</summary>
+      <div class="answer">可以。定位只在你主動點「使用目前位置」時要求一次，精度到城市級，僅用於查詢天氣。不授權也能手動選城市，功能完全一致。</div>
+    </details>
+
+    <details>
+      <summary>我的紀錄會上傳嗎？</summary>
+      <div class="answer">不會。釣點、釣遊、漁獲、備註和照片都只存在你自己的手機上，App 不需要帳號。移除 App 後這些資料會一併刪除。</div>
+    </details>
+
+    <details>
+      <summary>0 條漁獲也能記錄嗎？</summary>
+      <div class="answer">能，而且應該記。「摃龜也是一場」——釣遊場次和摃龜率是按你實際出門的次數算的，只記有魚的場次會讓統計失真。</div>
+    </details>
+
+    <details>
+      <summary>禁漁期資訊可靠嗎？</summary>
+      <div class="answer">禁漁期資料以中國大陸主要流域為範圍，來自各流域漁業主管部門公開公告，介面標註了公告文號與適用水域，並提示「以當地公告為準」。沒有核實到公告的地區會明確顯示「未收錄」，不會讓你誤以為「沒有限制」。中國大陸以外地區顯示的是遵守當地法規的一般提醒。</div>
+    </details>
+
+    <details>
+      <summary>天氣資料來自哪裡？</summary>
+      <div class="answer">Apple WeatherKit（Apple 提供的系統天氣服務），App 只把經緯度交給它；它無法使用時會自動改用自建伺服器（和風天氣資料），介面標註「備用來源」。天氣屬預報，存在不確定性；指數只是基於氣象條件的參考，不等於實際上魚情況。</div>
+    </details>
+
+    <details>
+      <summary>可以換 App 圖示嗎？</summary>
+      <div class="answer">可以。「我的 → 外觀 → App 圖示」提供晨景、月夜、黃昏、雨天四套配色。</div>
+    </details>
+  </div>
+
+  <div class="card">
+    <h2>還有其他問題</h2>
+    <p>寄信到 <a href="mailto:support@nicebooo.cn">support@nicebooo.cn</a>，請附上系統版本與 App 版本，能重現的步驟寫清楚會更快定位。</p>
+    <p class="meta">隱私相關說明見<a href="privacy-policy.html">《隱私權政策》</a>。</p>
+  </div>
+
+  <footer>釣魚紀錄 · 看天氣，決定今天去不去釣魚</footer>
+</div>
+</body>
+</html>

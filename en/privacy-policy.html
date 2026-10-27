@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy · Fishing Log</title>
+<style>
+  :root{
+    --primary:#0B7C55;
+    --ink:#1A2420;
+    --ink-2:#5B6B62;
+    --ink-3:#8A988F;
+    --line:#E7EAE6;
+    --sunken:#F6F7F5;
+    --surface:#FFFFFF;
+    --danger:#B42318;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    background:var(--sunken);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size:16px;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:720px;margin:0 auto;padding:48px 20px 80px}
+  .card{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:28px 24px;
+    margin-bottom:20px;
+  }
+  h1{font-size:26px;line-height:1.3;margin:0 0 8px;font-weight:700}
+  h2{font-size:18px;margin:0 0 12px;font-weight:700}
+  h3{font-size:15px;margin:24px 0 8px;font-weight:700}
+  p{margin:0 0 12px}
+  ul{margin:0 0 12px;padding-left:22px}
+  li{margin-bottom:6px}
+  .meta{font-size:13px;color:var(--ink-3);margin:0}
+  .lead{font-size:15px;color:var(--ink-2)}
+  .tag{
+    display:inline-block;font-size:12px;color:var(--ink-2);
+    background:#EFF0EF;border-radius:999px;padding:3px 12px;margin-bottom:16px;
+  }
+  table{width:100%;border-collapse:collapse;margin:0 0 12px;font-size:14px}
+  th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{color:var(--ink-2);font-weight:500;white-space:nowrap}
+  .no{color:var(--primary);font-weight:700}
+  .yes{color:var(--danger);font-weight:700}
+  a{color:var(--primary)}
+  footer{font-size:13px;color:var(--ink-3);text-align:center;margin-top:32px}
+  .langs{display:flex;gap:14px;justify-content:flex-end;font-size:13px;margin:0 0 14px}
+  .langs a{color:var(--ink-3);text-decoration:none}
+  .langs a.on{color:var(--primary);font-weight:600}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="langs">
+    <a href="../zh-Hans/privacy-policy.html">简体</a>
+    <a href="../zh-Hant/privacy-policy.html">繁體</a>
+    <a class="on" href="privacy-policy.html">English</a>
+    <a href="../ja/privacy-policy.html">日本語</a>
+  </nav>
+
+  <div class="card">
+    <span class="tag">Fishing Log · Privacy Policy</span>
+    <h1>Where your data goes</h1>
+    <p class="meta">Effective 27 October 2026 · Version 2.1 (weather now comes from Apple WeatherKit)</p>
+    <p class="lead">Fishing Log is a decision tool for fishing weather. We treat "collect less" as a feature: the app needs no account, and your spots, catches and photos stay on your own phone by default.</p>
+  </div>
+
+  <div class="card">
+    <h2>1. What we collect</h2>
+    <table>
+      <tr><th>Data type</th><th>Purpose</th><th>Linked to your identity</th><th>Used for tracking</th></tr>
+      <tr>
+        <td>Coarse location (city level)</td>
+        <td>Fetched once, only when you tap "Use Current Location", to look up local weather and to reverse-geocode a city name for display</td>
+        <td class="no">No</td>
+        <td class="no">No</td>
+      </tr>
+    </table>
+    <h3>Nothing else</h3>
+    <ul>
+      <li>No precise location and no movement history. Only the single "currently selected city" is kept as a setting (so the next launch can query weather directly), and no past locations are retained</li>
+      <li>No sign-up, no phone number or email account</li>
+      <li>Your spots, sessions, catches and photos are never uploaded</li>
+      <li>No ad SDK, no tracking across apps or websites</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>2. Where your data lives</h2>
+    <p>Everything you enter — spots, sessions, catches, notes and photos — is stored on this device (in the iOS database) and is never synced to our servers. Uninstalling the app or deleting a record deletes the data.</p>
+    <p>Weather and index data are cached locally so the app works offline; that cache is local too.</p>
+  </div>
+
+  <div class="card">
+    <h2>3. When the app goes online</h2>
+    <ul>
+      <li><strong>Weather</strong>: coordinates are handed to Apple's system weather service, WeatherKit, in exchange for temperature, pressure, wind and rain. When you pick a city by hand, the app uses the public city-centre coordinates built into it; when you tap "Use Current Location", it uses the single coarse coordinate you authorised. No city name or other information is sent. If Apple's service is unavailable, the app falls back to our own server (which forwards the same request to our weather data provider, QWeather) and the interface is marked "Backup source". Nothing else is transmitted.</li>
+      <li><strong>Reverse geocoding</strong>: when you tap "Use Current Location", that one coarse coordinate is passed to Apple's system reverse geocoder (MapKit's <code>MKReverseGeocodingRequest</code> on iOS 26 and later, Core Location's <code>CLGeocoder</code> before that) to obtain a place name such as "Hangzhou" for display. This step is provided by Apple; its purpose is to avoid showing you the placeholder word "Current location". The place name and that coordinate are kept on this device only as part of the single "current city" setting (otherwise the next launch could not query weather directly); they are not uploaded, no history is kept and no track is formed.</li>
+      <li><strong>Rule configuration</strong>: at launch the app fetches index rule parameters and closed-season data used for scoring and display. If the fetch fails, the built-in defaults are used and the interface is marked "Offline fallback".</li>
+    </ul>
+    <p>Beyond these services we share data with no third party, and the app contains no advertising or analytics SDK.</p>
+  </div>
+
+  <div class="card">
+    <h2>4. Why the app asks for permissions</h2>
+    <table>
+      <tr><th>Permission</th><th>Purpose</th><th>If you decline</th></tr>
+      <tr><td>Location (while using)</td><td>Fetched once, only when you tap "Use Current Location": a coarse position used to look up weather and to reverse-geocode a city name for display</td><td>You can still choose a city by hand; every feature works</td></tr>
+      <tr><td>Photos (add)</td><td>Only when you tap "Save share card", to write the card image to your photo library</td><td>You cannot save the share card; nothing else is affected</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>5. Children</h2>
+    <p>Fishing Log is intended for a general audience. It is not designed for children under 13 and does not knowingly collect personal information from children.</p>
+  </div>
+
+  <div class="card">
+    <h2>6. Changes to this policy</h2>
+    <p>If this policy changes (for example, if a new category of data is collected), we will update the effective date at the top of this page and tell you inside the app. Material changes will be announced in advance.</p>
+  </div>
+
+  <div class="card">
+    <h2>7. Contact</h2>
+    <p>For any question, comment or request about this policy, contact us at:</p>
+    <p><a href="mailto:support@nicebooo.cn">support@nicebooo.cn</a></p>
+    <p class="meta">We reply within 15 business days of receiving a request.</p>
+  </div>
+
+  <footer>Fishing Log · Data stays on your phone, weather asked once · <a href="support.html">Support</a></footer>
+</div>
+</body>
+</html>

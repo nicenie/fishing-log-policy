@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>プライバシーポリシー · 釣りログ</title>
+<style>
+  :root{
+    --primary:#0B7C55;
+    --ink:#1A2420;
+    --ink-2:#5B6B62;
+    --ink-3:#8A988F;
+    --line:#E7EAE6;
+    --sunken:#F6F7F5;
+    --surface:#FFFFFF;
+    --danger:#B42318;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    background:var(--sunken);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",Meiryo,sans-serif;
+    font-size:16px;
+    line-height:1.8;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:720px;margin:0 auto;padding:48px 20px 80px}
+  .card{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:28px 24px;
+    margin-bottom:20px;
+  }
+  h1{font-size:26px;line-height:1.35;margin:0 0 8px;font-weight:700}
+  h2{font-size:18px;margin:0 0 12px;font-weight:700}
+  h3{font-size:15px;margin:24px 0 8px;font-weight:700}
+  p{margin:0 0 12px}
+  ul{margin:0 0 12px;padding-left:22px}
+  li{margin-bottom:6px}
+  .meta{font-size:13px;color:var(--ink-3);margin:0}
+  .lead{font-size:15px;color:var(--ink-2)}
+  .tag{
+    display:inline-block;font-size:12px;color:var(--ink-2);
+    background:#EFF0EF;border-radius:999px;padding:3px 12px;margin-bottom:16px;
+  }
+  table{width:100%;border-collapse:collapse;margin:0 0 12px;font-size:14px}
+  th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{color:var(--ink-2);font-weight:500;white-space:nowrap}
+  .no{color:var(--primary);font-weight:700}
+  .yes{color:var(--danger);font-weight:700}
+  a{color:var(--primary)}
+  footer{font-size:13px;color:var(--ink-3);text-align:center;margin-top:32px}
+  .langs{display:flex;gap:14px;justify-content:flex-end;font-size:13px;margin:0 0 14px}
+  .langs a{color:var(--ink-3);text-decoration:none}
+  .langs a.on{color:var(--primary);font-weight:600}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="langs">
+    <a href="../zh-Hans/privacy-policy.html">简体</a>
+    <a href="../zh-Hant/privacy-policy.html">繁體</a>
+    <a href="../en/privacy-policy.html">English</a>
+    <a class="on" href="privacy-policy.html">日本語</a>
+  </nav>
+
+  <div class="card">
+    <span class="tag">釣りログ · プライバシーポリシー</span>
+    <h1>データの行き先</h1>
+    <p class="meta">発効日：2026年10月27日 · バージョン 2.1（天気データを Apple WeatherKit に変更）</p>
+    <p class="lead">釣りログは釣りの天気を判断するためのツールです。「集めない」ことを機能として設計しています。アカウントは不要で、釣り場・釣果・写真は既定でお使いの iPhone の中だけに保存されます。</p>
+  </div>
+
+  <div class="card">
+    <h2>1. 収集する情報</h2>
+    <table>
+      <tr><th>種類</th><th>用途</th><th>個人の特定</th><th>トラッキング</th></tr>
+      <tr>
+        <td>おおよその位置（市区町村レベル）</td>
+        <td>「現在地を使う」を押したときだけ 1 回取得し、その地域の天気の取得と、表示用の地名の逆ジオコーディングに使用</td>
+        <td class="no">なし</td>
+        <td class="no">なし</td>
+      </tr>
+    </table>
+    <h3>それ以外は収集しません</h3>
+    <ul>
+      <li>正確な位置は取得せず、移動の履歴も記録しません。保存するのは「現在選択中の都市」という設定 1 件のみ（次回起動時にすぐ天気を引くため）で、過去の位置は残しません</li>
+      <li>会員登録は不要。電話番号やメールアドレスなどのアカウント情報は収集しません</li>
+      <li>釣り場・釣行記録・釣果・写真をアップロードしません</li>
+      <li>広告 SDK を組み込まず、アプリや Web をまたぐトラッキングも行いません</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>2. データの保存場所</h2>
+    <p>入力した釣り場・釣行・釣果・メモ・写真はすべて本機（iOS のデータベース）に保存され、当社のサーバーへ同期されることはありません。アプリを削除するか該当の記録を削除すれば、データも削除されます。</p>
+    <p>天気と指数のデータはオフライン表示のために一時的にキャッシュしますが、このキャッシュも本機の中だけにあります。</p>
+  </div>
+
+  <div class="card">
+    <h2>3. 通信するタイミング</h2>
+    <ul>
+      <li><strong>天気の取得</strong>：緯度経度を Apple の天気サービス WeatherKit に渡し、気温・気圧・風・降水のデータを受け取ります。都市を手動で選んだ場合はアプリに内蔵した公開の都市中心座標を、現在地を使う場合は許可された 1 回分のおおよその座標を使います。都市名などの情報は送りません。Apple のサービスが利用できない場合は当社の自前サーバー（天気データ提供元の和風天気 QWeather へ転送）に自動で切り替わり、画面に「予備ソース」と表示します。これ以外の送信は行いません。</li>
+      <li><strong>地名の逆ジオコーディング</strong>：「現在地を使う」を押したとき、その 1 回分のおおよその座標を Apple の標準の逆ジオコーディング（iOS 26 以降は MapKit の <code>MKReverseGeocodingRequest</code>、それ以前は Core Location の <code>CLGeocoder</code>）に渡し、「杭州市」のような地名を表示用に取得します。これは Apple が提供する処理で、「現在地」という仮の文字をそのまま見せないためのものです。地名とその座標は「現在の都市」という設定 1 件としてのみ本機に残り（そうしないと次回起動時に天気を引けません）、アップロードも履歴の保存も軌跡の生成も行いません。</li>
+      <li><strong>ルール設定の取得</strong>：起動時に指数ルールのパラメータと禁漁期のデータを取得し、計算と表示に使います。取得に失敗した場合はアプリ内蔵の既定値を使い、画面に「オフライン代替」と表示します。</li>
+    </ul>
+    <p>上記のサービス以外に第三者へデータを提供することはなく、広告・解析 SDK も組み込んでいません。</p>
+  </div>
+
+  <div class="card">
+    <h2>4. 権限の用途</h2>
+    <table>
+      <tr><th>権限</th><th>用途</th><th>拒否した場合</th></tr>
+      <tr><td>位置情報（使用中）</td><td>「現在地を使う」を押したときだけ 1 回、天気の取得と表示用の地名取得のためにおおよその位置を取得</td><td>手動で都市を選べるため、すべての機能が使えます</td></tr>
+      <tr><td>写真（追加）</td><td>「シェアカードを保存」を押したときだけ、カード画像を写真ライブラリへ書き込み</td><td>シェアカードの保存はできませんが、他の機能に影響はありません</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>5. 子どもの利用について</h2>
+    <p>釣りログは一般の利用者を対象としており、13 歳未満の子ども向けに設計されていません。子どもの個人情報を意図的に収集することもありません。</p>
+  </div>
+
+  <div class="card">
+    <h2>6. ポリシーの変更</h2>
+    <p>本ポリシーを変更する場合（新たな収集項目の追加など）は、このページ上部の発効日を更新し、アプリ内でもお知らせします。重要な変更は事前に告知します。</p>
+  </div>
+
+  <div class="card">
+    <h2>7. お問い合わせ</h2>
+    <p>本ポリシーに関するご質問・ご意見・ご請求は、下記までご連絡ください。</p>
+    <p><a href="mailto:support@nicebooo.cn">support@nicebooo.cn</a></p>
+    <p class="meta">ご連絡を受けてから 15 営業日以内に回答します。</p>
+  </div>
+
+  <footer>釣りログ · データは端末の中、天気は一度だけ · <a href="support.html">サポート</a></footer>
+</div>
+</body>
+</html>
