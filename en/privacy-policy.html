@@ -70,8 +70,8 @@
   <div class="card">
     <span class="tag">Fishing Log · Privacy Policy</span>
     <h1>Where your data goes</h1>
-    <p class="meta">Effective 27 October 2026 · Version 2.1 (weather now comes from Apple WeatherKit)</p>
-    <p class="lead">Fishing Log is a decision tool for fishing weather. We treat "collect less" as a feature: the app needs no account, and your spots, catches and photos stay on your own phone by default.</p>
+    <p class="meta">Effective 29 October 2026 · Version 2.2 (records now sync through your own iCloud; four anonymous events in the Pro purchase flow)</p>
+    <p class="lead">Fishing Log is a decision tool for fishing weather. We treat "collect less" as a feature: the app needs no account, your records live in your own iCloud account where we cannot read them, and the only interaction data we ever receive is four anonymous events from the Pro purchase flow.</p>
   </div>
 
   <div class="card">
@@ -84,37 +84,46 @@
         <td class="no">No</td>
         <td class="no">No</td>
       </tr>
+      <tr>
+        <td>Product interaction (four events in the Pro purchase flow)</td>
+        <td>Paywall shown, paywall tapped, trial started, subscription completed — used only to see where the purchase flow loses people</td>
+        <td class="no">No</td>
+        <td class="no">No</td>
+      </tr>
     </table>
     <h3>Nothing else</h3>
     <ul>
       <li>No precise location and no movement history. Only the single "currently selected city" is kept as a setting (so the next launch can query weather directly), and no past locations are retained</li>
       <li>No sign-up, no phone number or email account</li>
-      <li>Your spots, sessions, catches and photos are never uploaded</li>
+      <li>Your spots, sessions, catches and photos are never sent to our servers — they sync through your own private iCloud database (see §2)</li>
       <li>No ad SDK, no tracking across apps or websites</li>
     </ul>
+    <h3>About those four events</h3>
+    <p>When the Pro paywall appears, when it is tapped, when a trial starts and when a subscription completes, the app sends that single event to our own server together with a random device identifier generated on this device. It is not your Apple ID and not the advertising identifier, there is no account for us to link it to, and it is never used to follow you across other apps or websites. Nothing you record — no spot, catch, photo or note — is included. Until the Pro purchase flow ships, the app sends none of these events.</p>
   </div>
 
   <div class="card">
     <h2>2. Where your data lives</h2>
-    <p>Everything you enter — spots, sessions, catches, notes and photos — is stored on this device (in the iOS database) and is never synced to our servers. Uninstalling the app or deleting a record deletes the data.</p>
-    <p>Weather and index data are cached locally so the app works offline; that cache is local too.</p>
+    <p>Everything you enter — spots, sessions, catches, notes and photos — lives in a local iOS database on this device and, whenever iCloud is available, in your own private iCloud database. That database is hosted by Apple under your Apple ID: we hold no copy of it and no way to read it. Deleting a record in the app removes it from both.</p>
+    <p>Because of iCloud your records survive uninstalling the app: install it again with the same Apple ID and they come back. To remove them for good, delete the records inside the app, or turn this app's iCloud data off in iOS Settings → your name → iCloud and delete the data there.</p>
+    <p>Weather and index data are cached locally so the app works offline; that cache never leaves the device.</p>
   </div>
 
   <div class="card">
     <h2>3. When the app goes online</h2>
     <ul>
-      <li><strong>Weather</strong>: coordinates are handed to Apple's system weather service, WeatherKit, in exchange for temperature, pressure, wind and rain. When you pick a city by hand, the app uses the public city-centre coordinates built into it; when you tap "Use Current Location", it uses the single coarse coordinate you authorised. No city name or other information is sent. If Apple's service is unavailable, the app falls back to our own server (which forwards the same request to our weather data provider, QWeather) and the interface is marked "Backup source". Nothing else is transmitted.</li>
+      <li><strong>Weather</strong>: coordinates are handed to Apple's system weather service, WeatherKit, in exchange for temperature, pressure, wind and rain. The coordinates come from the single coarse position you authorised when you tapped "Use Current Location" during setup. No city name or other information is sent. If Apple's service is unavailable, the app falls back to our own server (which forwards the same request to our weather data provider, QWeather) and the interface is marked "Backup source". Nothing else is transmitted.</li>
       <li><strong>Reverse geocoding</strong>: when you tap "Use Current Location", that one coarse coordinate is passed to Apple's system reverse geocoder (MapKit's <code>MKReverseGeocodingRequest</code> on iOS 26 and later, Core Location's <code>CLGeocoder</code> before that) to obtain a place name such as "Hangzhou" for display. This step is provided by Apple; its purpose is to avoid showing you the placeholder word "Current location". The place name and that coordinate are kept on this device only as part of the single "current city" setting (otherwise the next launch could not query weather directly); they are not uploaded, no history is kept and no track is formed.</li>
       <li><strong>Rule configuration</strong>: at launch the app fetches index rule parameters and closed-season data used for scoring and display. If the fetch fails, the built-in defaults are used and the interface is marked "Offline fallback".</li>
     </ul>
-    <p>Beyond these services we share data with no third party, and the app contains no advertising or analytics SDK.</p>
+    <p>Beyond these services we share data with no third party, and the app contains no advertising or third-party analytics SDK. Our own product-interaction events are limited to the four described in §1.</p>
   </div>
 
   <div class="card">
     <h2>4. Why the app asks for permissions</h2>
     <table>
       <tr><th>Permission</th><th>Purpose</th><th>If you decline</th></tr>
-      <tr><td>Location (while using)</td><td>Fetched once, only when you tap "Use Current Location": a coarse position used to look up weather and to reverse-geocode a city name for display</td><td>You can still choose a city by hand; every feature works</td></tr>
+      <tr><td>Location (while using)</td><td>Fetched once, only when you tap "Use Current Location": a coarse position used to look up weather and to reverse-geocode a city name for display</td><td>Setup can't be completed — turn on location in Settings to continue</td></tr>
       <tr><td>Photos (add)</td><td>Only when you tap "Save share card", to write the card image to your photo library</td><td>You cannot save the share card; nothing else is affected</td></tr>
     </table>
   </div>
@@ -136,7 +145,7 @@
     <p class="meta">We reply within 15 business days of receiving a request.</p>
   </div>
 
-  <footer>Fishing Log · Data stays on your phone, weather asked once · <a href="support.html">Support</a></footer>
+  <footer>Fishing Log · Records in your iCloud, the weather asked once · <a href="support.html">Support</a></footer>
 </div>
 </body>
 </html>
